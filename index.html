@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101714" />
+    <meta name="description" content="Magellan Performance business operations dashboard." />
+    <meta property="og:title" content="Magellan Performance | Operations Dashboard" />
+    <meta property="og:description" content="Manage coaching sessions, team invoices, payroll, and business expenses." />
+    <meta property="og:image" content="assets/magellan-performance-logo.png" />
+    <title>Magellan Performance | Operations Dashboard</title>
+    <base href="/" />
+    <link rel="icon" type="image/png" href="assets/magellan-performance-logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#overview" aria-label="Magellan Performance dashboard home" title="Magellan Performance">
+          <img class="brand-mark" src="assets/magellan-performance-logo.png" alt="Magellan Performance brain and soccer ball logo" />
+          <span class="brand-copy"><strong>MAGELLAN</strong><small>PERFORMANCE</small></span>
+        </a>
+
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <button class="nav-link active" data-page="overview">
+            <span class="nav-icon" data-icon="grid"></span><span>Overview</span>
+          </button>
+          <button class="nav-link" data-page="activity">
+            <span class="nav-icon" data-icon="calendar"></span><span>Sessions &amp; games</span>
+            <span class="nav-count" id="activity-count">0</span>
+          </button>
+          <button class="nav-link" data-page="coaches">
+            <span class="nav-icon" data-icon="users"></span><span>Coaches</span>
+          </button>
+          <button class="nav-link" data-page="teams">
+            <span class="nav-icon" data-icon="shield"></span><span>Teams &amp; invoices</span>
+          </button>
+          <button class="nav-link" data-page="expenses">
+            <span class="nav-icon" data-icon="receipt"></span><span>Expenses</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="tip-card">
+            <span class="tip-icon" data-icon="sparkles"></span>
+            <p><strong>Stay in your stride.</strong><br />A clear view of the business makes room for better coaching.</p>
+          </div>
+          <button class="profile-button" id="profile-button">
+            <span class="avatar avatar-brand">MP</span>
+            <span class="profile-copy"><strong>Magellan Performance</strong><small>Business workspace</small></span>
+            <span class="profile-more" data-icon="more"></span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <button class="mobile-menu icon-button" id="mobile-menu" aria-label="Open navigation"><span data-icon="menu"></span></button>
+          <div class="breadcrumb"><span>Workspace</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label" id="today-label"></span>
+            <button class="icon-button notification-button" aria-label="Notifications"><span data-icon="bell"></span><i></i></button>
+            <span class="avatar avatar-small">MP</span>
+          </div>
+        </header>
+
+        <div class="page-wrap">
+          <section class="page active" id="page-overview"></section>
+          <section class="page" id="page-activity"></section>
+          <section class="page" id="page-coaches"></section>
+          <section class="page" id="page-teams"></section>
+          <section class="page" id="page-expenses"></section>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header">
+          <div><span class="eyebrow" id="modal-eyebrow">MAGELLAN PERFORMANCE</span><h2 id="modal-title"></h2></div>
+          <button class="icon-button close-modal" id="close-modal" aria-label="Close dialog"><span data-icon="close"></span></button>
+        </div>
+        <form id="modal-form" class="modal-form"></form>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
